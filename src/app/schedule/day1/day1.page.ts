@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./day1.page.scss'],
 })
 export class Day1Page implements OnInit {
+  //scheduleDay1: EventDetail[];
   scheduleDay1 = [
     {
       "time": "04.00 am",

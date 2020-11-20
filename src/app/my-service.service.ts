@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap,take, switchMap, map} from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
-import { fatherMother } from './models/fatherMother';
+
 
 interface NamesData {
   name: string,
@@ -13,6 +13,7 @@ interface NamesData {
 })
 export class MyServiceService {
   private _gmName = new BehaviorSubject<string>('');
+  private _homePicUrl = new BehaviorSubject<string>('');
   private _fmNames = new BehaviorSubject<string[]>([]);
   private _bNames = new BehaviorSubject<string[]>([]);
   private _auNames = new BehaviorSubject<string[]>([]);
@@ -23,7 +24,10 @@ export class MyServiceService {
   {
     return this._fmNames.asObservable();
   }
-
+get homePicUrl()
+{
+  return this._homePicUrl.asObservable();
+}
   get gmName()
   {
     return this._gmName.asObservable();
@@ -83,6 +87,7 @@ export class MyServiceService {
           if(bNamesData.hasOwnProperty(key))
           {
             names.push(bNamesData[key])
+            //names.push(bNamesData[key].time,bNamesData[key].event,.....)
           }
         }
         return names;
@@ -166,6 +171,24 @@ export class MyServiceService {
         return url;
       }), tap(u => {
         this._yURL.next(u);
+      })
+      )
+  }
+  fetchHomePicUrlLink()
+  {
+    return this.http.get<{[key : string]: string}>('https://wedding-app-db970.firebaseio.com/HomeImage.json').pipe(
+       map( myURL => {
+        let url = '';
+        for(const key in myURL)
+        {
+          if(myURL.hasOwnProperty(key))
+          {
+            url = myURL[key]
+          }
+        }
+        return url;
+      }), tap(u => {
+        this._homePicUrl.next(u);
       })
       )
   }

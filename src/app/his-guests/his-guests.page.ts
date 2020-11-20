@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { fatherMother } from '../models/fatherMother';
 import { Subscription } from 'rxjs';
 import { MyServiceService } from '../my-service.service';
 @Component({
@@ -7,6 +6,7 @@ import { MyServiceService } from '../my-service.service';
   templateUrl: './his-guests.page.html',
   styleUrls: ['./his-guests.page.scss'],
 })
+//Interface
 export class HisGuestsPage implements OnInit {
 
   isLoading1 : boolean = false;
