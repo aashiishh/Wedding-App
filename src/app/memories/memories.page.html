@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sweet Memories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!isLoading">
+  <ion-card *ngFor="let image of imageList">
+    <img src={{image}} />
+  </ion-card>
+</ion-content>
+<ion-content *ngIf="isLoading">
+  <ion-card>
+    <ion-item>
+      <ion-label>loading memoies...<ion-spinner name="crescent"></ion-spinner></ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-app>
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar color="success">
+        <ion-title>
+          <ion-icon name="heart"></ion-icon>
+          With love 
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content style="background: tomato;">
+        <ion-list>
+          <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/first">
+            <ion-icon name="home" slot="start"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/guests">
+            <ion-icon name="people" slot="start"></ion-icon>
+            <ion-label>Guests</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/schedule">
+            <ion-icon name="ribbon" slot="start"></ion-icon>
+            <ion-label>Events & Schedule</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/venue">
+            <ion-icon name="wine" slot="start"></ion-icon>
+            <ion-label>Venue</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/memories">
+            <ion-icon name="images" slot="start"></ion-icon>
+            <ion-label>Sweet Memories</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+         <ion-menu-toggle>
+          <ion-item lines="none" routerLink="/live-video">
+            <ion-icon name="images" slot="start"></ion-icon>
+            <ion-label>Youtube Live</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,83 @@
+<ion-content>
+    <ion-card *ngIf="isLoading0">
+        <ion-card-header>
+          <ion-card-subtitle>Grand Mother(Baa)</ion-card-subtitle>
+        </ion-card-header>
+        <ion-item>
+          <ion-label><ion-spinner name="dots"></ion-spinner></ion-label>
+        </ion-item>
+      </ion-card>
+      <ion-card *ngIf="!isLoading0">
+        <ion-card-header>
+          <ion-card-subtitle>Grand Mother(Baa)</ion-card-subtitle>
+        </ion-card-header>
+        <ion-item>
+          <ion-label>{{gmName}}</ion-label>
+        </ion-item>
+      </ion-card>
+    <ion-card *ngIf="isLoading1">
+      <ion-card-header>
+        <ion-card-subtitle>Father & Mother</ion-card-subtitle>
+      </ion-card-header>
+      <ion-item>
+        <ion-label><ion-spinner name="dots"></ion-spinner></ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card *ngIf="!isLoading1">
+      <ion-card-header>
+        <ion-card-subtitle>Father & Mother</ion-card-subtitle>
+      </ion-card-header>
+      <ion-item *ngFor="let name of loadedFMNames">
+        <ion-label>{{name}}</ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card *ngIf="isLoading2">
+      <ion-card-header>
+        <ion-card-subtitle>Uncle & Aunts</ion-card-subtitle>
+      </ion-card-header>
+      <ion-item>
+        <ion-label><ion-spinner name="dots"></ion-spinner></ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card *ngIf="!isLoading2">
+      <ion-card-header>
+        <ion-card-subtitle>Uncle & Aunts</ion-card-subtitle>
+      </ion-card-header>
+      <ion-item *ngFor="let name of loadedAUNames">
+        <ion-label>{{name}}</ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card *ngIf="isLoading3">
+      <ion-card-header>
+        <ion-card-subtitle>Brothers & Sisters</ion-card-subtitle>
+      </ion-card-header>
+      <ion-item>
+        <ion-label><ion-spinner name="dots"></ion-spinner></ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card *ngIf="!isLoading3">
+      <ion-card-header>
+        <ion-card-subtitle>Brothers & Sisters</ion-card-subtitle>
+      </ion-card-header>
+      <ion-item *ngFor="let name of loadedBNames">
+        <ion-label>{{name}}</ion-label>
+      </ion-item>
+    </ion-card>
+    <!--<ion-card *ngIf="isLoading4">
+      <ion-card-header>
+         <ion-card-subtitle>Other Respected Guests</ion-card-subtitle>
+      </ion-card-header>
+      <ion-item>
+        <ion-label><ion-spinner name="dots"></ion-spinner></ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card *ngIf="!isLoading4">
+      <ion-card-header>
+        <ion-card-subtitle>Other Respected Guests</ion-card-subtitle>
+      </ion-card-header>
+      <ion-item *ngFor="let name of loadedONames">
+        <ion-label>{{name}}</ion-label>
+      </ion-item>
+    </ion-card> -->
+  </ion-content>
+  
