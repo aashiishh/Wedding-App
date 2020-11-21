@@ -2,8 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap,take, switchMap, map} from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
+import { EventDetail } from './models/event-details';
 
+interface EventSchedule{
 
+  time: string,
+  event:string,
+  venue:string,
+}
 interface NamesData {
   name: string,
 }
@@ -19,7 +25,15 @@ export class MyServiceService {
   private _auNames = new BehaviorSubject<string[]>([]);
   private _images = new BehaviorSubject<string[]>([]);
   private _yURL = new BehaviorSubject<string>('');
+
+  private _day1table = new BehaviorSubject<EventDetail[]>([]);
+
   constructor(private http:HttpClient) { }
+
+  get day1table()
+  {
+    return this._day1table.asObservable();
+  }
   get fmNames()
   {
     return this._fmNames.asObservable();
@@ -192,6 +206,28 @@ get homePicUrl()
       })
       )
   }
-
+fetchDayFirst(check : string)
+{
+let url = '';
+if(check === "Day1")
+url = 'https://wedding-app-db970.firebaseio.com/Schedule/Day1.json';
+else
+url = 'https://wedding-app-db970.firebaseio.com/Schedule/Day2.json';
+return this.http.get<{[key : string]: EventSchedule}>(url).pipe(
+map( day1Data => {
+const names = [];
+for(const key in day1Data)
+{
+  if(day1Data.hasOwnProperty(key))
+  {
+    names.push(new EventDetail(day1Data[key].time,day1Data[key].event,day1Data[key].venue))
+  }
+}
+return names;
+}), tap(list => {
+this._day1table.next(list);
+})
+)
+}
 
 }

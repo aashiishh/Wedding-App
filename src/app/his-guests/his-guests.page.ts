@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MyServiceService } from '../my-service.service';
 @Component({
@@ -7,7 +7,7 @@ import { MyServiceService } from '../my-service.service';
   styleUrls: ['./his-guests.page.scss'],
 })
 //Interface
-export class HisGuestsPage implements OnInit {
+export class HisGuestsPage implements OnInit, OnDestroy {
 
   isLoading1 : boolean = false;
   isLoading2 : boolean = false;

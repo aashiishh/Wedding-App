@@ -1,0 +1,41 @@
+ion-item{
+    --background: rgb(209, 127, 241);
+    --color: rgb(124, 0, 87);
+}
+
+ion-toolbar{
+    --background: rgb(243, 158, 243);
+    --color: white;
+}
+
+ion-content{
+    --background: rgb(84, 232, 243);
+}
+
+ion-toolbar ion-icon
+{
+    color:rgb(255, 15, 87);
+}
+
+ion-icon
+{
+    color:rgb(130, 223, 55);
+}
+.myhome ion-icon{
+    color:brown;
+}
+#myoutube ion-icon{
+    color:red;
+}
+#myguest ion-icon{
+    color:peachpuff;
+}
+#myevent ion-icon{
+    color:rgb(253, 78, 14);
+}
+#myvenue ion-icon{
+    color:yellow;
+}
+#mymemo ion-icon{
+    color:greenyellow;
+}

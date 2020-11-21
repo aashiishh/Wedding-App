@@ -1,7 +1,6 @@
 export class EventDetail
 {
-    constructor(public time:string, public event:string,)
+    constructor(public time:string, public event:string, public venue:string)
     {}
-    //constructor(public father:string,public mother:string)
-    //{}
+    
 }
