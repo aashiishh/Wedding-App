@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 interface s{
   time: string,
-  name: string,
+  event: string,
   venue: string,
 }
 

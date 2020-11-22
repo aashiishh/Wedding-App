@@ -5,13 +5,22 @@
       <ion-col style="border: 2px purple solid;text-align: center;"><b>Day2</b> - 01.12.2020 (Tuesday)
         </ion-col>
     </ion-row>
-    <ion-row><ion-col style="border: 2px purple solid;text-align: center;font-size: small;">Timings</ion-col>
-    <ion-col style="border: 2px purple solid;text-align: center;font-size: small;">Events</ion-col>
-    <ion-col style="border: 2px purple solid;text-align: center;font-size: small;">Venue</ion-col></ion-row>
-    <ion-row *ngFor="let obj of scheduleDay2">
-      <ion-col style="border: 2px purple solid;text-align: center;font-size: small;">{{obj.time}}</ion-col>
+    <ion-row><ion-col style="border: 2px purple solid;text-align: center;font-size: small;font-weight: bolder;">Timings</ion-col>
+    <ion-col style="border: 2px purple solid;text-align: center;font-size: small;font-weight: bolder;">Events</ion-col>
+    <ion-col style="border: 2px purple solid;text-align: center;font-size: small;font-weight: bolder;">Venue</ion-col></ion-row>
+    <div *ngIf="isLoading1">
+    <ion-row>
+      <ion-col style="border: 2px purple solid;text-align: center;font-size: small;"><ion-spinner name="dots"></ion-spinner></ion-col>
+      <ion-col style="border: 2px purple solid;text-align: center;font-size: small;"><ion-spinner name="dots"></ion-spinner></ion-col>
+      <ion-col style="border: 2px purple solid;text-align: center;font-size: small;"><ion-spinner name="dots"></ion-spinner></ion-col>
+    </ion-row>
+  </div>
+  <div *ngIf="!isLoading1">
+    <ion-row *ngFor="let obj of day2Names">
       <ion-col style="border: 2px purple solid;text-align: center;font-size: small;">{{obj.event}}</ion-col>
+      <ion-col style="border: 2px purple solid;text-align: center;font-size: small;">{{obj.time}}</ion-col>
       <ion-col style="border: 2px purple solid;text-align: center;font-size: small;">{{obj.venue}}</ion-col>
     </ion-row>
+  </div>
   </ion-grid>
 </ion-content>
