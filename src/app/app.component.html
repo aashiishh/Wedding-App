@@ -1,47 +1,47 @@
 <ion-app>
   <ion-menu side="start">
     <ion-header>
-      <ion-toolbar color="sweetPink">
+      <ion-toolbar>
         <ion-title>
           <ion-icon name="heart"></ion-icon>
           With Love 
         </ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content style="background: tomato;">
-        <ion-list>
+    <ion-content>
+        <ion-list class="ion-no-padding">
           <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/first">
+          <ion-item lines="none" routerLink="/first" class="myhome">
             <ion-icon name="home" slot="start"></ion-icon>
             <ion-label>Home</ion-label>
           </ion-item>
         </ion-menu-toggle>
       <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/guests">
+          <ion-item lines="none" routerLink="/guests" id="myguest">
             <ion-icon name="people" slot="start"></ion-icon>
             <ion-label>Guests</ion-label>
           </ion-item>
         </ion-menu-toggle>
       <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/schedule">
+          <ion-item lines="none" routerLink="/schedule" id="myevent">
             <ion-icon name="ribbon" slot="start"></ion-icon>
             <ion-label>Events & Schedule</ion-label>
           </ion-item>
         </ion-menu-toggle>
       <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/venue">
+          <ion-item lines="none" routerLink="/venue" id="myvenue">
             <ion-icon name="wine" slot="start"></ion-icon>
             <ion-label>Venue</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/memories">
+          <ion-item lines="none" routerLink="/memories"id="mymemo">
             <ion-icon name="images" slot="start"></ion-icon>
             <ion-label>Sweet Memories</ion-label>
           </ion-item>
         </ion-menu-toggle>
          <ion-menu-toggle>
-          <ion-item lines="none" routerLink="/live-video">
+          <ion-item lines="none" routerLink="/live-video" id="myoutube">
             <ion-icon name="caret-forward-circle-outline" slot="start"></ion-icon>
             <ion-label>Youtube Live</ion-label>
           </ion-item>
