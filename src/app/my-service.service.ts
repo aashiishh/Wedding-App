@@ -211,8 +211,10 @@ fetchDayFirst(check : string)
 let url = '';
 if(check === "Day1")
 url = 'https://wedding-app-db970.firebaseio.com/Schedule/Day1.json';
-else
+else if(check === "Day2")
 url = 'https://wedding-app-db970.firebaseio.com/Schedule/Day2.json';
+else
+url = 'https://wedding-app-db970.firebaseio.com/Schedule/Day3.json';
 return this.http.get<{[key : string]: EventSchedule}>(url).pipe(
 map( day1Data => {
 const names = [];

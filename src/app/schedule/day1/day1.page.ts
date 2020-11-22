@@ -29,15 +29,12 @@ export class Day1Page implements OnInit, OnDestroy {
       this.service.fetchDayFirst("Day1").subscribe(() => {
         this.isLoading1 = false;
       });
-      
- 
   }
 
   ngOnDestroy()
   {
     if(this.day1NamesSub)
     this.day1NamesSub.unsubscribe();
-    
   }
 }
   //scheduleDay1: EventDetail[];
